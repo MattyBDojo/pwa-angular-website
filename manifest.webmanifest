@@ -2,7 +2,7 @@
   "name": "pwa-angular-website",
   "short_name": "pwa-angular-website",
   "theme_color": "#1976d2",
-  "background_color": "#fafafa",
+  "background_color": "#673ab7",
   "display": "standalone",
   "scope": "./",
   "start_url": "./",
