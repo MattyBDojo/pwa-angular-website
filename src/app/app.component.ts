@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AuthService } from './services/auth-service.service';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'pwa-angular-website';
+  constructor(public authService: AuthService) {}
+  title = 'PWA website';
+
+  logout(): void {
+    this.authService.logout();
+  }
 }

@@ -1,0 +1,10 @@
+<h1>Add contact</h1>
+<form #contactForm="ngForm" (ngSubmit)="onSubmit()">
+    <mat-form-field>
+        <input matInput placeholder="Name" [(ngModel)]="contact.name" name="name" required>
+    </mat-form-field>
+    <mat-form-field>
+        <input matInput placeholder="Email" type="email" [(ngModel)]="contact.email" name="email" required>
+    </mat-form-field>
+    <button mat-raised-button color="primary" type="submit" [disabled]="!contactForm.form.valid">Add contact</button>
+</form>

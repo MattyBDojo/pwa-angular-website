@@ -1,0 +1,22 @@
+<h1>Add organisation</h1>
+<form #organisationForm="ngForm" (ngSubmit)="onSubmit()">
+    <mat-form-field>
+        <input matInput placeholder="Name" [(ngModel)]="organisation.name" name="name" required>
+    </mat-form-field>
+    <mat-form-field>
+        <input matInput placeholder="Location" [(ngModel)]="organisation.location" name="location" required>
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label>Type</mat-label>
+        <mat-select [(ngModel)]="organisation.type" name="type">
+            <mat-option *ngFor="let type of types" [value]="type">{{ type }}</mat-option>
+        </mat-select>
+    </mat-form-field>
+    <mat-form-field>
+        <input matInput placeholder="Business" [(ngModel)]="organisation.business" name="business" required>
+    </mat-form-field>
+    <mat-form-field>
+        <input matInput placeholder="Phone number" type="number" [(ngModel)]="organisation.number" name="number" required>
+    </mat-form-field>
+    <button mat-raised-button color="primary" type="submit" [disabled]="!organisationForm.form.valid">Add organisation</button>
+</form>

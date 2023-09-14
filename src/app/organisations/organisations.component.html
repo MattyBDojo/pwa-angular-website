@@ -1,0 +1,17 @@
+<h1>Organisations</h1>
+<mat-expansion-panel *ngFor="let organisation of organisations" hideToggle>
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        {{ organisation.name }}
+      </mat-panel-title>
+      <mat-panel-description>
+        {{ organisation.location }}
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+    <mat-list>
+        <mat-list-item>Type - {{ organisation.type }}</mat-list-item>
+        <mat-list-item>Business - {{ organisation.business }}</mat-list-item>
+        <mat-list-item>Number - {{ organisation.number }}</mat-list-item>
+    </mat-list>
+  </mat-expansion-panel>
+<button mat-raised-button color="primary" (click)="addOrganisation()">Add organisation</button>

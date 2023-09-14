@@ -1,0 +1,8 @@
+<h1>Contacts</h1>
+<mat-selection-list>
+    <mat-list-option *ngFor="let contact of contacts">
+        <h3 matListItemTitle>{{ contact.name }}</h3>
+        <p matListItemLine>{{ contact.email }}</p>
+    </mat-list-option>
+</mat-selection-list>
+<button mat-raised-button color="primary" (click)="addContact()">Add contact</button>
