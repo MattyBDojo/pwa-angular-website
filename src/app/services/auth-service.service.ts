@@ -1,4 +1,6 @@
 import { Injectable } from '@angular/core';
+import { Observable, of, throwError } from 'rxjs';
+import { catchError, delay, tap } from 'rxjs/operators';
 import { Router } from '@angular/router';
 
 @Injectable({
@@ -8,12 +10,24 @@ export class AuthService {
   constructor(private router: Router) {}
   private loggedIn = false;
 
-  login(username: string, password: string):void {
+  login(username: string, password: string): Observable<boolean> {
     if (username === 'user' && password === 'ilovedojo123') {
-      localStorage.setItem('isLoggedIn', 'true');
-      this.loggedIn = true;
+      return of(true).pipe(
+        delay(2000),
+        tap(() => {
+          localStorage.setItem('isLoggedIn', 'true');
+          this.loggedIn = true;
+        })
+      );
     } else {
-      this.loggedIn = false;
+      
+      return throwError('Invalid username or password').pipe(
+        delay(3000),
+        catchError((error) => {
+          this.loggedIn = false;
+          return throwError(error);
+        })
+      );
     }
   }
 

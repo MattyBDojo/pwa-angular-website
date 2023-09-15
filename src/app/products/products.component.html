@@ -1,6 +1,7 @@
 <h1>Products</h1>
 <div class="columns">
-    <div cdkDropList 
+    <div cdkDropList
+        class="column"
         #stageOneList="cdkDropList"
         [cdkDropListData]="stageOneItems"
         [cdkDropListConnectedTo]="[stageTwoList, stageThreeList]" 
@@ -9,6 +10,7 @@
         <div class="box" *ngFor="let item of stageOneItems" cdkDrag>{{ item }}</div>
     </div>
     <div cdkDropList
+        class="column"
         #stageTwoList="cdkDropList" 
         [cdkDropListData]="stageTwoItems"
         [cdkDropListConnectedTo]="[stageOneList, stageThreeList]" 
@@ -17,6 +19,7 @@
         <div class="box" *ngFor="let item of stageTwoItems" cdkDrag>{{ item }}</div>
     </div>
     <div cdkDropList
+        class="column"
         #stageThreeList="cdkDropList"
         [cdkDropListData]="stageThreeItems"
         [cdkDropListConnectedTo]="[stageOneList, stageTwoList]" 

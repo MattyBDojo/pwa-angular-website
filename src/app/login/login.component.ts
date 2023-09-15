@@ -10,6 +10,8 @@ import { Router } from '@angular/router';
 export class LoginComponent {
   username = '';
   password = '';
+  loading = false;
+  errorMessage: string | null = null;
 
   constructor(
     private authService: AuthService,
@@ -17,10 +19,16 @@ export class LoginComponent {
   ) {}
 
   onSubmit(): void {
-    this.authService.login(this.username, this.password);
-
-    if(this.authService.isLoggedIn()) {
-      this.router.navigate(['home']);
-    }
+    this.loading = true;
+    this.authService.login(this.username, this.password).subscribe(
+      () => {
+        this.loading = false;
+        this.router.navigate(['home']);
+      },
+      (error) => {
+        this.errorMessage = error;
+        this.loading = false;
+      }
+    );
   }
 }
