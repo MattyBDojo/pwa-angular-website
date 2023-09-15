@@ -7,6 +7,8 @@ import { ServiceWorkerModule } from '@angular/service-worker';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DragDropModule } from '@angular/cdk/drag-drop';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { WebcamModule } from 'ngx-webcam';
+import { NgImageSliderModule } from 'ng-image-slider';
 
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
@@ -29,6 +31,8 @@ import { ProductsComponent } from './products/products.component';
 import { LoginComponent } from './login/login.component';
 import { AddContactComponent } from './add-contact/add-contact.component';
 import { AddOrganisationComponent } from './add-organisation/add-organisation.component';
+import { DocumentsComponent } from './documents/documents.component';
+import { AddDocumentComponent } from './add-document/add-document.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +44,9 @@ import { AddOrganisationComponent } from './add-organisation/add-organisation.co
     ProductsComponent,
     LoginComponent,
     AddContactComponent,
-    AddOrganisationComponent
+    AddOrganisationComponent,
+    DocumentsComponent,
+    AddDocumentComponent
   ],
   imports: [
     BrowserModule,
@@ -55,6 +61,8 @@ import { AddOrganisationComponent } from './add-organisation/add-organisation.co
     DragDropModule,
     FormsModule,
     ReactiveFormsModule,
+    WebcamModule,
+    NgImageSliderModule,
     MatToolbarModule,
     MatIconModule,
     MatButtonModule,

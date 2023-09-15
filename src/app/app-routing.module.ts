@@ -4,6 +4,8 @@ import { HomeComponent } from './home/home.component';
 import { ContactsComponent } from './contacts/contacts.component';
 import { OrganisationsComponent } from './organisations/organisations.component';
 import { ProductsComponent } from './products/products.component';
+import { DocumentsComponent } from './documents/documents.component';
+import { AddDocumentComponent } from './add-document/add-document.component';
 import { LoginComponent } from './login/login.component';
 import { AddContactComponent } from './add-contact/add-contact.component';
 import { AddOrganisationComponent } from './add-organisation/add-organisation.component';
@@ -18,6 +20,8 @@ const routes: Routes = [
   { path: 'organisations', component: OrganisationsComponent, canActivate: [AuthGuard] },
   { path: 'add-organisation', component: AddOrganisationComponent, canActivate: [AuthGuard] },
   { path: 'products', component: ProductsComponent, canActivate: [AuthGuard] },
+  { path: 'documents', component: DocumentsComponent, canActivate: [AuthGuard] },
+  { path: 'add-document', component: AddDocumentComponent, canActivate: [AuthGuard] },
 ];
 
 @NgModule({

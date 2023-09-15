@@ -1,0 +1,15 @@
+<h1>Add Document</h1>
+<div class="webcam-container">
+    <webcam
+        [height]="500"
+        [width]="500"
+        [trigger]="triggerObservable"
+        (imageCapture)="handleImageCapture($event)"
+    ></webcam>
+</div>
+<form #documentForm="ngForm">
+    <mat-form-field>
+        <input matInput placeholder="Document name" [(ngModel)]="documentName" name="documentName" required>
+    </mat-form-field>
+</form>
+<button [disabled]="!documentName" mat-raised-button color="primary" (click)="captureImage()">Capture</button>
